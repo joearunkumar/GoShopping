@@ -273,8 +273,8 @@ function receivedMessage(event) {
     console.log("processToDo: ",processToDo);
 
     if(processToDo == "function") {
-      var functionToCall = new Function(array[1]);
-      functionToCall();
+      //var functionToCall = new Function(array[1]);
+      //functionToCall();
       //window[array[1]](senderID);
     } else if(processToDo == "text") {
       sendTextMessage(senderID, array[1]);
