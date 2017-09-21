@@ -275,7 +275,7 @@ function receivedMessage(event) {
 
       if(processToDo == "function") {
         //eval(array[1])(senderID);
-        apply(array[1],senderID);
+        this.apply(array[1],senderID);
       } else if(processToDo == "text") {
         sendTextMessage(senderID, array[1]);
       }
