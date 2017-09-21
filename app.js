@@ -451,7 +451,7 @@ function sendImageMessage(recipientId) {
  * Send a Gif using the Send API.
  *
  */
-function sendGifMessage(recipientId) {
+/*function sendGifMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -467,13 +467,13 @@ function sendGifMessage(recipientId) {
   };
 
   callSendAPI(messageData);
-}
+}*/
 
 /*
  * Send audio using the Send API.
  *
  */
-function sendAudioMessage(recipientId) {
+/*function sendAudioMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -489,7 +489,7 @@ function sendAudioMessage(recipientId) {
   };
 
   callSendAPI(messageData);
-}
+}*/
 
 /*
  * Send a video using the Send API.
@@ -517,7 +517,7 @@ function sendVideoMessage(recipientId) {
  * Send a file using the Send API.
  *
  */
-function sendFileMessage(recipientId) {
+/*function sendFileMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
@@ -533,7 +533,7 @@ function sendFileMessage(recipientId) {
   };
 
   callSendAPI(messageData);
-}
+}*/
 
 /*
  * Send a text message using the Send API.
