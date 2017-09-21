@@ -1,7 +1,11 @@
 {
    "hi":[
       "text",
-      "respond"
+      "Hi"
+   ],
+   "hello":[
+      "text",
+      "Hello"
    ],
    "image":[
       "function",
