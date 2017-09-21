@@ -262,7 +262,7 @@ function receivedMessage(event) {
     var fs = require("fs");
 
     // Get content from file
-    var contents = fs.readFileSync("config\response.json");
+    var contents = fs.readFileSync("config/response.json");
 
     // Define to JSON type
     var jsonContent = JSON.parse(contents);
