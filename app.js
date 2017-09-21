@@ -255,8 +255,29 @@ function receivedMessage(event) {
     return;
   }
 
+
   if (messageText) {
 
+    // Define JSON File
+    var fs = require("fs");
+
+    // Get content from file
+    var contents = fs.readFileSync("config\response.json");
+
+    // Define to JSON type
+    var jsonContent = JSON.parse(contents);
+    // Get Value from JSON
+
+    var array = jsonContent[messageText];
+    var processToDo = array[0];
+    console.log("processToDo: ",processToDo);
+
+    if(processToDo == "function") {
+      window[array[1]](senderID);
+    } else if(processToDo == "text") {
+      sendTextMessage(senderID, array[1]);
+    }
+    /*
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
     // the text we received.
@@ -315,7 +336,7 @@ function receivedMessage(event) {
 
       default:
         sendTextMessage(senderID, messageText);
-    }
+    }*/
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
   }

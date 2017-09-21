@@ -1,0 +1,18 @@
+{
+   "hi":[
+      "text",
+      "respond"
+   ],
+   "image":[
+      "function",
+      "sendImageMessage"
+   ],
+   "deal of the day":[
+      "function",
+      "sendGenericMessage"
+   ],
+   "demo video":[
+      "function",
+      "sendVideoMessage"
+   ]
+}
