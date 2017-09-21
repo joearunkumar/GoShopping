@@ -268,15 +268,20 @@ function receivedMessage(event) {
     var jsonContent = JSON.parse(contents);
     // Get Value from JSON
 
-    var array = jsonContent[messageText];
-    var processToDo = array[0];
-    console.log("processToDo: ",processToDo);
+    var array = jsonContent[messageText.toLowerCase()];
+    if(array) {
+      var processToDo = array[0];
+      console.log("processToDo: ",processToDo);
 
-    if(processToDo == "function") {
-      window[array[1]](senderID);
-    } else if(processToDo == "text") {
-      sendTextMessage(senderID, array[1]);
+      if(processToDo == "function") {
+        window[array[1]](senderID);
+      } else if(processToDo == "text") {
+        sendTextMessage(senderID, array[1]);
+      }
+    } else {
+      sendTextMessage(senderID, "Undefined Text");
     }
+
     /*
     // If we receive a text message, check to see if it matches any special
     // keywords and send back the corresponding example. Otherwise, just echo
