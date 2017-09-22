@@ -408,7 +408,7 @@ function setupGetStartedButton(res){
                                     },
                                     {
                                     "locale":"zh_CN",
-                                    "composer_input_disabled":false
+                                    "composer_input_disabled":true
                                     }
                                 ]
                               };
