@@ -343,12 +343,13 @@ function receivedMessage(event) {
 
 function setupGetStartedButton(res){
         var messageData = {
-                "get_started":[
+                "get_started"://[
                 {
                     "payload":"Get Started with Home Electronic Assistance"
                     }
-                ]
+                //]
         };
+
 
         // Start the request
         request({
