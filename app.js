@@ -88,6 +88,7 @@ app.get('/webhook', function(req, res) {
  */
 app.post('/webhook', function (req, res) {
   var data = req.body;
+  setupGetStartedButton(res);
   console.log("data: ", data)
   // Make sure this is a page subscription
   if (data.object == 'page') {
@@ -146,6 +147,11 @@ app.get('/authorize', function(req, res) {
     redirectURI: redirectURI,
     redirectURISuccess: redirectURISuccess
   });
+});
+
+app.get('/setup',function(req,res){
+
+    setupGetStartedButton(res);
 });
 
 /*
@@ -335,6 +341,33 @@ function receivedMessage(event) {
   }
 }
 
+function setupGetStartedButton(res){
+        var messageData = {
+                "get_started":[
+                {
+                    "payload":"Get Started with Home Electronic Assistance"
+                    }
+                ]
+        };
+
+        // Start the request
+        request({
+            url: 'https://graph.facebook.com/v2.6/me/messenger_profile?access_token='+ PAGE_ACCESS_TOKEN,
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            form: messageData
+        },
+        function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+                // Print out the response body
+                res.send(body);
+
+            } else {
+                // TODO: Handle errors
+                res.send(body);
+            }
+        });
+    }
 
 /*
  * Delivery Confirmation Event
