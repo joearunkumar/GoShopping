@@ -448,7 +448,7 @@ function setupGetStartedButton(res){
           res.send(JSON.stringify({ "speech": response, "displayText": response
           //"speech" is the spoken version of the response, "displayText" is the visual version
           }));
-        };
+        });
 
 /*
  * Delivery Confirmation Event
