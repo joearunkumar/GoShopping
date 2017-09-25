@@ -18,7 +18,7 @@ app.use(express.static('public'));
 * @param {Object} req Cloud Function request context.
 * @param {Object} res Cloud Function response context.
 */
-app.get('/helloHttp', function(req, res) {
+app.post('/helloHttp', function(req, res) {
 //exports.helloHttp = function helloHttp (req, res) {
   response = "This is a sample response from your webhook!" //Default response from the webhook to show it's working
 
